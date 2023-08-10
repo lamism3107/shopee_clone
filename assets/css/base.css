@@ -1,0 +1,227 @@
+:root{
+    --primary-color: #ee4d2d;
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+
+    --header-height: 120px;
+    --navbar-height: 34px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+    --header-sort-bar-height: 46px;
+}
+
+*{
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+}
+
+.clear{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* Grid Responsive */
+
+
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.grid__column-2{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+.grid__column-2-4{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+.grid__column-10{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3334%;
+}
+/* Modal CSS */
+.modal{
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    animation: fadeIn linear 0.1s;
+}
+
+
+/* Animation CSS */
+@keyframes fadeIn{
+    form{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes growth{
+    from{
+        transform: scale(0.7);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+@keyframes headerGrow{
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__body{
+    position: relative;
+    margin: auto;
+    z-index: 1;
+    animation: growth ease 0.1s;
+}
+
+/* Button style */
+.btn{
+    min-width: 120px;
+    background-color: var(--white-color);
+    height: 36px;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn.btn--normal:hover{
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.btn.btn--primary{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+.btn.btn--disabled{
+    cursor: default;
+}
+.btn.btn--size-s{
+    height: 32px;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+/* Selection input */
+.select-input{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-color);
+    height: 36px;
+    min-width: 200px;
+    padding: 0 16px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+}
+
+.select-input__label{
+    font-size: 1.4rem;
+}
+.select-input:hover .select-input__list{
+    display: block;
+}
+.select-input__list{
+    position: absolute;
+    display: none;
+    top: 37px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 10px 16px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    list-style-type: none;
+    z-index: 1;
+}
+.select-input__item{
+    font-size: 1.4rem;;
+    padding: 8px 0;
+}
+
+.select-input__item:hover a{
+    color: var(--primary-color);
+}
+
+.select-input__link{
+    font-size: 1.4rem;
+    color: var(--text-color);
+    text-decoration: none;
+}
+.select-input__icon{
+    color: rgb(131, 131 131);
+    position: relative;
+    top: 1px;
+    font-size: 1.4rem;
+}
+
+/* Pagination CSS */
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pagination-list{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+    .pagination-item{
+        margin: 0 15px; 
+    }
+.pagination-item__link{
+    display: block;
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: #939393;
+    min-width: 40px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+.pagination-item__link--active{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 2px;
+}
+
+
